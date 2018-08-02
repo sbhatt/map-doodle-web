@@ -30,11 +30,22 @@
 			console.log(' DAta :: '+data.lng);
 			var lng = data.lng;
 			var lat = data.lat;
+			/*
 			var mapProp= {
 				center:new google.maps.LatLng(lat,lng),
-				zoom:20,
+				zoom:16,
 			};
 			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);			
+			*/
+			
+  var myCenter = new google.maps.LatLng(lat,lng);
+  var mapCanvas = document.getElementById("googleMap");
+  var mapOptions = {center: myCenter, zoom: 15};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+
+  
 		}
 		
 		function myMap() {
