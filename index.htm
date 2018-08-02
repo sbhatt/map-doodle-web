@@ -47,8 +47,11 @@
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
+  
 		
-		var contentStr = '<div><a target="blank" herf="https://www.google.co.in/maps/dir/'+lat+','+lng+'">Show Route</a> </div>';
+		var contentStr = '<div><a target="blank" href="https://www.google.co.in/maps/dir/'+lat+','+lng+'">Show Route</a> </div>';
+		
+		console.log('Href :: '+contentStr);
 		
 		var infowindow = new google.maps.InfoWindow({
     content: contentStr
