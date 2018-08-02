@@ -26,6 +26,9 @@
 		}	
 		
 		
+		https://www.google.co.in/maps/dir/28.508501,77.0717363/@28.5089897,77.069659,17z
+		
+		
 		function showMeOnMap(data, error){
 			console.log(' DAta :: '+data.lng);
 			var lng = data.lng;
@@ -44,7 +47,16 @@
   var map = new google.maps.Map(mapCanvas, mapOptions);
   var marker = new google.maps.Marker({position:myCenter});
   marker.setMap(map);
-
+		
+		var contentStr = '<div><a target="blank" herf="https://www.google.co.in/maps/dir/'+lat+','+lng+'">Show Route</a> </div>';
+		
+		var infowindow = new google.maps.InfoWindow({
+    content: contentString
+  });
+  
+  marker.addListener('click', function() {
+    infowindow.open(map, marker);
+  });
   
 		}
 		
